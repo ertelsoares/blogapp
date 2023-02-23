@@ -16,13 +16,15 @@ class UserFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition(): array
-    {
+    { 
+        $thumb = $this->faker->image('public/images/users',640,480);
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10),
+            'firstName' => $this->faker->firstName(),
+            'lastName' => $this->faker->lastName(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'thumb' => str_replace('public','',$thumb),
+            'password' => bcrypt('123'), // password
+            
         ];
     }
 
