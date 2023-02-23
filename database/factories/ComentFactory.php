@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,9 @@ class ComentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => User::pluck('id')->random(),
+            'post_id' => Post::pluck('id')->random(),
+            'comment' => $this->faker->paragraph(5),
         ];
     }
 }
