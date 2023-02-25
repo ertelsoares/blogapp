@@ -2,8 +2,7 @@
 
 @section('header-intro')
         <h2>Buscar post</h2>
-        <form action="" method="get">
-          @csrf
+        <form action="{{route('Home')}}" method="get">
             <input type="text" name="search" id="" placeholder="Oque deseja Buscar?">
             <button type="submit">Buscar</button>
         </form>
@@ -41,10 +40,12 @@
           <h2> Nenhum post encontrado</h2>
         @endforelse
         
-
-        
       </div>
-
+      @if (request()->input('search'))
+      <div class="d-flex justify-content-center">
+        <div>{{ $posts->appends(['search' => request()->input('search')])->links()}}</div>
+        </div>
+      @endif
      
     </section>
     

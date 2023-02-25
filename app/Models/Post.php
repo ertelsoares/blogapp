@@ -18,4 +18,12 @@ class Post extends Model
     public function comments(){
         return $this->hasMany(Coment::class);
     }
+
+    public static function search($search){
+
+        return self::where('title',"like","%{$search}%")
+        ->orWhere('content',"like","%{$search}%")
+        ->with(['user','comments'])
+        ->paginate(3);
+    }
 }
