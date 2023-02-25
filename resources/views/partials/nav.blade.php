@@ -11,11 +11,11 @@
     <div class="collapse navbar-collapse" id="navbarExample01">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" aria-current="page" href="#intro">Home</a>
+          <a class="nav-link" aria-current="page" href="{{route('Home')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"
-            target="_blank">Learn Bootstrap 5</a>
+          <a class="nav-link" href="" rel="nofollow"
+            target="_blank">Posts</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://mdbootstrap.com/docs/standard/" target="_blank">Download MDB UI KIT</a>
