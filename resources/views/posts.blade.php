@@ -12,7 +12,7 @@
 @section('main')
 
     <section class="text-center">
-      <h4 class="mb-5"><strong>Últimos posts</strong></h4>
+      <h4 class="mb-5"><strong>Posts ({{ $posts->total()}})</strong></h4>
         
       <div class="posts">
         @forelse ($posts as $post)
@@ -39,12 +39,10 @@
         @empty
           <h2> Nenhum post encontrado</h2>
         @endforelse
-        
-
-        
       </div>
-
-     
+      <div class="d-flex justify-content-center">
+      <div>{{ $posts->links()}}</div>
+      </div>
     </section>
     
     

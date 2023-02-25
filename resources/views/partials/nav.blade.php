@@ -14,19 +14,26 @@
           <a class="nav-link" aria-current="page" href="{{route('Home')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="" rel="nofollow"
-            target="_blank">Posts</a>
+          <a class="nav-link" href="{{route('posts')}}" rel="nofollow">Posts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://mdbootstrap.com/docs/standard/" target="_blank">Download MDB UI KIT</a>
+          <a class="nav-link" href="{{route('login')}}" >Login</a>
         </li>
       </ul>
 
       <ul class="navbar-nav d-flex flex-row">
         <!-- Icons -->
-        <li class="nav-item me-3 me-lg-0">
+        
+        <li class="nav-item me-3 me-lg-0" >Bem vindo : 
+          @if (auth()->guest())
+         Visitante
+        @else
+           {{auth()->user()->fullName}} <a href="{{route('logout')}}">Logout</a>
+        @endif
+        </li>
+        {{-- <li class="nav-item me-3 me-lg-0">
           <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"
-            target="_blank">
+            >
             <i class="fab fa-youtube"></i>
           </a>
         </li>
@@ -44,7 +51,7 @@
           <a class="nav-link" href="https://github.com/mdbootstrap/mdb-ui-kit" rel="nofollow" target="_blank">
             <i class="fab fa-github"></i>
           </a>
-        </li>
+        </li> --}}
       </ul>
     </div>
   </div>
