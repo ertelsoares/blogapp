@@ -3,6 +3,7 @@
 @section('header-intro')
         <h2>Buscar post</h2>
         <form action="" method="get">
+          @csrf
             <input type="text" name="search" id="" placeholder="Oque deseja Buscar?">
             <button type="submit">Buscar</button>
         </form>
