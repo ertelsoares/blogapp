@@ -27,12 +27,11 @@
               </a>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Post title</h5>
+              <h5 class="card-title">{{$post->title}}</h5>
               <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
+                {{Str::limit($post->content,10,'...')}}
               </p>
-              <a href="#!" class="btn btn-primary">Read</a>
+              <a href="{{ route('post',$post->slug)}}" class="btn btn-primary">Leia mais</a>
             </div>
           </div>
         </div>
