@@ -10,7 +10,6 @@ class HomeController extends Controller
     public function index(){
         $posts = Post::limit(10)->orderby('id', 'desc')->get();
 
-        dd($posts);
-        return view('home',['title' => 'Home - BLOG']);
+        return view('home',['title' => 'Home - BLOG','posts' => $posts]);
     }
 }
